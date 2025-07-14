@@ -1,5 +1,3 @@
-// operadores.js
-
 // 1. Faça a soma de 25 e 17
 let soma = 25 + 17;
 console.log("Soma de 25 e 17:", soma); // 42 
@@ -140,6 +138,6 @@ console.log(3 + 2 == 5 && 10 > 2); // true
 // 30. Avaliação completa
 let resultado30 = 10 + 5 * 2 > 30 / 2 && !false;
 // 5 * 2 = 10 → 10 + 10 = 20 → 30 / 2 = 15 → 20 > 15 = true → true && true = true
+console.log(resultado30); // true
 // Somei 10 e 5, logo após multipliquei por 2 e dividi por 2
 // Obtivi um resultado maior que 30 (considerando os cálculos em geral)
-console.log(resultado30); // true
