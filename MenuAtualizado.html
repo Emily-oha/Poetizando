@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="TESTE.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Echo</title>
+    <!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<style>
+/* Fundo de partículas conectadas */
+#particles-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* fica atrás do conteúdo */
+    background-color: #f0f0f0; /* cor cinza minimalista */
+}
+</style>
+
+</head>
+<body>
+    <div id="particles-background"></div>
+<script>
+particlesJS("particles-background", {
+  "particles": {
+    "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#808080" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#808080", "opacity": 0.4, "width": 1 },
+    "move": { "enable": true, "speed": 1, "direction": "none", "straight": false }
+  },
+  "interactivity": {
+    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": false } },
+    "modes": { "repulse": { "distance": 100 } }
+  },
+  "retina_detect": true
+});
+</script>
+
+    <header>
+        <nav id="navbar">
+            <img src="ECHO LOGO PRETA.png" width="50">
+
+            <ul id="nav_list">
+                <li class="nav-item active">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+            </ul>
+
+            <button class="btn-default" style="color: white;"
+            onclick="window.location.href='Cont-teladelogin.html'"> 
+                Login
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                Login
+            </button>
+            <form action="Cont-teladelogin.html"
+    method="get"></form>
+        </div>
+    </header>
+
+    <main id="content">
+        <section id="home">
+            <div class="shape"></div>
+            <div id="cta">
+                <h1 class="title">
+                    Aqui você tem
+                    <span>voz!</span>
+                </h1>
+
+                <p class="description">
+                    Transformamos opiniões em decisões inteligentes.
+                </p>
+
+                <div id="cta_buttons">
+                    <a href="#" class="btn-default" style="color: white;">
+                        Cadastre-se
+                    </a>
+
+                    <a href="tel:+55555555555" id="phone_button">
+                        <button class="btn-default">
+                            <i class="fa-solid fa-phone" style="color: white;"></i>
+                        </button>
+                        (89) 99454-3124
+                    </a>
+                </div>
+
+                <div class="social-media-buttons">
+                    <a href="">
+                        <i class="fa-brands fa-whatsapp" style="color: white;"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/echorilay/">
+                        <i class="fa-brands fa-instagram" style="color: white;"></i>
+                    </a>
+
+                    <a href="">
+                        <i class="fa-brands fa-facebook" style="color: white;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div id="banner">
+                <img src="LOGIN2.svg" style="position: relative;">
+            </div>
+        </section>
+
+        <section id="sobre">
+            <h2 class="section-title"><p style="font-size: 40px;">Sobre o Echo</p></h2><br>
+        </button>
+    </div>
+</div>
+
+        <div class="sobre-container">
+        <div class="sobre-texto">
+            <p>
+            O <strong>Echo</strong> é uma plataforma digital desenvolvida para transformar feedbacks em decisões inteligentes, ajudando empresas e instituições a ouvirem, analisarem e aplicarem as opiniões de clientes e colaboradores de forma prática, organizada e segura.<br>
+             A ideia nasceu a partir da percepção de um problema comum: muitas empresas recebem poucas opiniões, não conseguem organizar os feedbacks ou simplesmente não sabem como aproveitá-los para melhorar processos e produtos. Em muitos casos, essas informações são registradas de forma manual, espalhadas em diferentes canais ou até mesmo ignoradas, o que gera insatisfação e perda de oportunidades de crescimento.<br>
+             Com isso, surgiu a proposta de criar uma solução acessível, intuitiva e eficiente, capaz de centralizar a coleta de feedbacks, permitir respostas rápidas e gerar sugestões automáticas de melhoria com base nos dados recebidos.
+            <p>
+              <h2 class="section">Nossa missão é dar voz aos consumidores e organização aos negócios, criando um espaço seguro e transparente onde cada opinião conta e pode gerar impacto real!<br></h2>
+            </p><br>
+             <h2 class="section-title">O que é o Echo?</h2>
+             <p>
+            O Echo é um aplicativo e sistema web que funciona como uma ponte entre empresas e pessoas, permitindo que opiniões sejam enviadas com ou sem identificação, avaliadas e organizadas em um único painel.
+             </p><br><br>
+<div class="features-differentials-container">
+    <div class="feature-box">
+        <h2>Funcionalidades principais:</h2>
+        <p>
+            • Coleta de feedbacks com texto, estrelas e opção anônima;<br>
+            • Painel de controle com gráficos e métricas de satisfação;<br>
+            • Filtros por data, setor, tipo de avaliação ou nota;<br>
+            • Respostas diretas da empresa para os usuários;<br>
+            • Sugestões automáticas de melhoria baseadas nos feedbacks;<br>
+            • Integração com sites, aplicativos e QR Code;<br>
+            • Cadastro e gerenciamento de empresas e usuários.<br>
+        </p>
+    </div>
+
+    <div class="feature-box">
+        <h2>Diferenciais:</h2>
+        <p>
+            • Opção anônima: segurança e privacidade;<br><br>
+            • Sugestões inteligentes: melhorias automáticas;<br><br>
+            • Centralização: todos os feedbacks em um só lugar;<br><br>
+            • Integração simples: app ou site;<br><br>
+            • Transparência: acompanhamento das respostas.
+        </p>
+    </div>
+</div>
+
+<style>
+    .features-differentials-container {
+        display: flex;          
+        gap: 100px;              
+        flex-wrap: wrap;         
+        justify-content: center; 
+        margin-bottom: 40px;    
+        align-items: stretch;
+
+    }
+
+    .feature-box {
+        background-color: #ffffff;
+        border: 2px solid #000;
+        border-radius: 10px;
+        padding: 20px;
+        min-width: 300px;      
+        max-width: 500px;
+        box-shadow: 4px 4px 0 #000;
+        font-family: Arial, sans-serif;
+    }
+
+    .feature-box h2 {
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+    }
+
+    .feature-box p {
+        margin: 0;
+        line-height: 1.6;
+    }
+</style>
+
+<h2 class="section-title">Para quem é?</h2></h2>
+<p>
+O Echo é ideal para empresas que valorizam a opinião de seus clientes e colaboradores e desejam criar uma cultura de melhoria contínua. Seja para negócios consolidados ou em crescimento, a plataforma ajuda a aumentar a satisfação, melhorar a comunicação e fortalecer a relação com o público.
+</p>
+</div><br><br>
+
+        <section id="testimonials">
+            <img src="COMENT.svg" id="testimonial_chef" alt="">
+
+            <div id="testimonials_content">
+                <h2 class="section-title">
+                    Depoimentos
+                </h2>
+                <h3 class="section-subtitle">
+                    O que os clientes falam sobre nós
+                </h3>
+
+                <div id="feedbacks">
+                    <div class="feedback">
+                        <img src="KAUAN.png" class="feedback-avatar" alt="">
+
+                        <div class="feedback-content" style="color: white;">
+                            <p>
+                                Kauan Batista
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                "Tive problemas com o mercado livre, e no echo coloquei minha opinião!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <img src="LORRAN.png" class="feedback-avatar" alt="">
+
+                        <div class="feedback-content" style="color: white;">
+                            <p>
+                                Vitor Lorran
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                "Encontrei problemas na Shoppe, no Echo pude expor minhas necessidades.
+"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-default" style="color: white;">
+                    Ver mais avaliações
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="src/images/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright" style="color: white;">
+                &copy 2025 RILAY
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="">
+                    <i class="fa-brands fa-whatsapp" style="color: white;"></i>
+                </a>
+
+                <a href="https://www.instagram.com/echorilay/">
+                    <i class="fa-brands fa-instagram" style="color: white;"></i>
+                </a>
+
+                <a href="">
+                    <i class="fa-brands fa-facebook" style="color: white;"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
