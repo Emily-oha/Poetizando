@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tela de Feedback</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%; /* notebook: ocupa a tela inteira */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border: none; /* remove borda no desktop */
+  }
+
+  .header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  height: 70px; /* fixa altura do cabeçalho */
+}
+
+.logo-direita {
+  height: 100%;     /* ocupa a altura do header */
+  width: auto;      /* mantém proporção */
+  margin-left: auto; /* joga pro canto direito */
+}
+
+  .header img {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .header h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .stars {
+    color: #f5a623;
+    font-size: 14px;
+  }
+
+
+  /* Área de comentário */
+  .comment-box {
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: none;
+    font-size: 14px;
+    background: #f5f5f5;
+  }
+  .anonimo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  /* Botão */
+  .btn-enviar {
+    background: #7c3aed;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+    width: 100%;
+  }
+  .btn-enviar:hover {
+    background: #4f0669;
+  }
+
+  /* Lista de comentários */
+  .comment-list {
+    flex: 1;
+    padding: 10px;
+    background: #fafafa;
+  }
+  .comment {
+    background: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+  .comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .comment-header img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  .comment-header strong {
+    font-size: 14px;
+  }
+  .verified {
+    font-size: 12px;
+    color: #3b82f6;
+    margin-left: 4px;
+  }
+  .comment p {
+    font-size: 13px;
+    margin: 4px 0 0;
+  }
+  .comment .stars {
+    margin-left: auto;
+    font-size: 12px;
+  }
+
+  /* --- RESPONSIVO: modo celular --- */
+  @media (max-width: 480px) {
+    .container {
+      max-width: 420px;
+      margin: auto;
+      border: 1px solid #ccc; /* borda igual ao protótipo */
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Cabeçalho -->
+    <div class="header">
+      <img src="https://logospng.org/download/mercado-livre/logo-mercado-livre-2048.png" alt="Logo App">
+      <div>
+        <h2>Mercado Livre</h2>
+        <div class="stars">★★★★★</div>
+      </div>
+      <!-- Logo no canto direito -->
+      <img class="logo-direita" src="ECHO logo preta.jpeg" alt="Minha Logo">
+    </div>
+
+    <!-- Caixa de comentário -->
+    <div class="comment-box">
+      <textarea placeholder="Digite..."></textarea>
+      <label class="anonimo">
+        <input type="checkbox"> Anônimo
+      </label>
+      <button class="btn-enviar">Enviar</button>
+    </div>
+
+    <!-- Lista de comentários -->
+    <div class="comment-list">
+      <div class="comment">
+        <div class="comment-header">
+          <img src="KAUAN.png" alt="avatar">
+          <strong>Kauan Batista</strong>
+          <span class="verified">✔</span>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <p>Excelente app, muito fácil de usar e entrega rápida!</p>
+      </div>
+
+      <div class="comment">
+        <div class="comment-header">
+          <img src="LORRAN.png" alt="avatar">
+          <strong>Anônimo</strong>
+          <div class="stars">★★★☆☆</div>
+        </div>
+        <p>Poderia melhorar a velocidade no carregamento das páginas.</p>
+      </div>
+
+      <div class="comment">
+        <div class="comment-header">
+          <img src="JIHYO.png" alt="avatar">
+          <strong>Anônimo</strong>
+          <div class="stars">★★★☆☆</div>
+        </div>
+        <p>Muito bom, e apesar de as vezes o pedido demorar e o app não informar, sempre chega sem defeitos.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+
