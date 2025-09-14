@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECHO - Análise de Sentimentos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      background-color: #000000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    header h1 {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+    header .menu {
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* Container */
+    .container {
+      padding: 1.5rem;
+    }
+
+    h2 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #111;
+    }
+
+    /* Card */
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    /* Linha sentimento */
+    .sentimento {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .sentimento .info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .sentimento span {
+      font-weight: bold;
+      min-width: 80px;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 12px;
+      border-radius: 8px;
+      background: #e5e7eb;
+      overflow: hidden;
+      margin: 0 10px;
+    }
+
+    .progress {
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    .positivo { background: #22c55e; }
+    .neutro { background: #facc15; }
+    .negativo { background: #ef4444; }
+
+    /* Insight IA */
+    .insight {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 1rem;
+    }
+    .insight-icon {
+      color: #facc15;
+      font-size: 1.4rem;
+    }
+
+    /* Filtros */
+    .filtros {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .select-wrapper {
+      position: relative;
+      flex: 1;
+    }
+
+    .select-wrapper select {
+      width: 100%;
+      padding: 0.6rem 2.5rem 0.6rem 0.8rem;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 0.95rem;
+      background: #fff;
+      appearance: none; /* tira a seta padrão */
+      cursor: pointer;
+    }
+
+    .select-wrapper::after {
+      content: "▼";
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    .select-wrapper.aberto::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>
+      <img src="ECHO logo branca.jpeg" alt="Logo ECHO" style="height: 50px;">
+    </h1>
+    <div class="menu">☰</div>
+  </header>
+
+  <!-- Conteúdo -->
+  <div class="container">
+    <h2>Análise de Sentimentos</h2>
+
+    <div class="card">
+      <h3>Mapa de Sentimentos – Últimos 30 dias</h3>
+
+      <!-- Positivos -->
+      <div class="sentimento">
+        <div class="info">
+          😀 <span>Positivos</span>
+          <div class="progress-bar">
+            <div class="progress positivo" style="width: 65%;"></div>
+          </div>
+        </div>
+        <strong>65%</strong>
+      </div>
+
+      <!-- Neutros -->
+      <div class="sentimento">
+        <div class="info">
+          😐 <span>Neutros</span>
+          <div class="progress-bar">
+            <div class="progress neutro" style="width: 25%;"></div>
+          </div>
+        </div>
+        <strong>25%</strong>
+      </div>
+
+      <!-- Negativos -->
+      <div class="sentimento">
+        <div class="info">
+          😡 <span>Negativos</span>
+          <div class="progress-bar">
+            <div class="progress negativo" style="width: 10%;"></div>
+          </div>
+        </div>
+        <strong>10%</strong>
+      </div>
+
+      <!-- Insight da IA -->
+      <div class="insight">
+        <div class="insight-icon">💡</div>
+        <p><strong>Insight da IA:</strong> A satisfação aumentou 12% após a última atualização.</p>
+      </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filtros">
+      <div class="select-wrapper">
+        <select onfocus="abrir(this)" onblur="fechar(this)">
+          <option>Período</option>
+          <option>Últimos 7 dias</option>
+          <option>Últimos 30 dias</option>
+          <option>Últimos 3 meses</option>
+        </select>
+      </div>
+
+      <div class="select-wrapper">
+        <select onfocus="abrir(this)" onblur="fechar(this)">
+          <option>Categoria</option>
+          <option>Elogios</option>
+          <option>Reclamações</option>
+          <option>Sugestões</option>
+          <option>Ideias Criativas</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function abrir(el) {
+      el.parentElement.classList.add("aberto");
+    }
+    function fechar(el) {
+      el.parentElement.classList.remove("aberto");
+    }
+  </script>
+
+</body>
+</html>
