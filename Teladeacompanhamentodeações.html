@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ECHO - Acompanhamento de Ações</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; background:#f8f9fa; margin:0; color:#111; }
+
+/* Header reduzido */
+header {
+  background: linear-gradient(135deg,#000,#4b0082);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  min-height: 60px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+}
+header img { height:40px; }
+header .menu { font-size:1.4rem; cursor:pointer; }
+
+.container { max-width:820px; margin:auto; padding:1.5rem; }
+h2 { font-size:1.5rem; margin:1rem 0 1.5rem; font-weight:600; }
+
+/* Filtros */
+.filtros { display:flex; gap:1rem; margin-bottom:1.5rem; align-items:center; }
+.select-wrapper { position:relative; flex:1; }
+.select-wrapper select {
+  width:100%; padding:0.6rem 2.5rem 0.6rem 0.9rem; border-radius:10px; border:1px solid #ddd;
+  font-size:.95rem; background:#fff; cursor:pointer; appearance:none;
+}
+.select-wrapper::after {
+  content:"▾"; position:absolute; right:12px; top:50%; transform:translateY(-50%);
+  pointer-events:none; color:#4b0082; transition:transform .3s ease;
+}
+.select-wrapper.aberto::after { transform:translateY(-50%) rotate(180deg); }
+
+/* Botão Limpar Filtros */
+#limparFiltros {
+  padding:0.55rem 1rem;
+  border:none;
+  border-radius:10px;
+  background:#4b0082;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition: background 0.3s;
+}
+#limparFiltros:hover { background:#6a00d3; }
+
+/* Cards */
+.card {
+  background:#fff; border-radius:15px; padding:1.2rem; margin-bottom:1rem;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08); display:flex; justify-content:space-between;
+  align-items:center; animation:fadeInUp 0.8s ease; transition: transform .2s ease, opacity .5s;
+}
+.card:hover { transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,0.12); }
+.card-left { display:flex; flex-direction:column; gap:4px; }
+.card-left span { font-size:0.85rem; color:#555; }
+.status {
+  padding:0.4rem 0.8rem; border-radius:12px; font-weight:600; color:#fff; min-width:100px; text-align:center;
+  transition: background .5s, color .5s;
+}
+.pendente { background:#ef4444; }
+.andamento { background:#facc15; color:#333; }
+.concluido { background:#22c55e; }
+
+@keyframes fadeInUp { from {opacity:0; transform:translateY(18px);} to {opacity:1; transform:none;} }
+
+.hidden { display:none; opacity:0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><img src="ECHO logo branca.jpeg" alt="Logo ECHO"></h1>
+  <div class="menu">☰</div>
+</header>
+
+<div class="container">
+<h2>Acompanhamento de Ações</h2>
+
+<!-- Filtros -->
+<div class="filtros">
+  <div class="select-wrapper">
+    <select id="statusFilter" onfocus="abrir(this)" onblur="fechar(this)">
+      <option value="">Status</option>
+      <option value="pendente">Pendente</option>
+      <option value="andamento">Em andamento</option>
+      <option value="concluido">Concluído</option>
+    </select>
+  </div>
+  <div class="select-wrapper">
+    <select id="categoriaFilter" onfocus="abrir(this)" onblur="fechar(this)">
+      <option value="">Categoria</option>
+      <option value="Elogio">Elogio</option>
+      <option value="Reclamação">Reclamação</option>
+      <option value="Sugestão">Sugestão</option>
+      <option value="Ideias Criativas">Ideias Criativas</option>
+    </select>
+  </div>
+  <button id="limparFiltros">Limpar filtros</button>
+</div>
+
+<!-- Lista de ações -->
+<div class="cards-list">
+  <div class="card" data-status="andamento" data-categoria="Reclamação">
+    <div class="card-left">
+      <strong>Melhorar atendimento</strong>
+      <span>Categoria: Reclamação</span>
+      <span>Data: 12/09/2025</span>
+    </div>
+    <div class="status andamento">Em andamento</div>
+  </div>
+
+  <div class="card" data-status="pendente" data-categoria="Sugestão">
+    <div class="card-left">
+      <strong>Atualizar FAQ</strong>
+      <span>Categoria: Sugestão</span>
+      <span>Data: 10/09/2025</span>
+    </div>
+    <div class="status pendente">Pendente</div>
+  </div>
+
+  <div class="card" data-status="concluido" data-categoria="Elogio">
+    <div class="card-left">
+      <strong>Reconhecimento de equipe</strong>
+      <span>Categoria: Elogio</span>
+      <span>Data: 08/09/2025</span>
+    </div>
+    <div class="status concluido">Concluído</div>
+  </div>
+
+  <div class="card" data-status="pendente" data-categoria="Reclamação">
+    <div class="card-left">
+      <strong>Treinamento interno</strong>
+      <span>Categoria: Reclamação</span>
+      <span>Data: 15/09/2025</span>
+    </div>
+    <div class="status pendente">Pendente</div>
+  </div>
+
+  <div class="card" data-status="andamento" data-categoria="Sugestão">
+    <div class="card-left">
+      <strong>Melhoria do site</strong>
+      <span>Categoria: Sugestão</span>
+      <span>Data: 13/09/2025</span>
+    </div>
+    <div class="status andamento">Em andamento</div>
+  </div>
+
+  <div class="card" data-status="concluido" data-categoria="Elogio">
+    <div class="card-left">
+      <strong>Nova política de feedback</strong>
+      <span>Categoria: Elogio</span>
+      <span>Data: 09/09/2025</span>
+    </div>
+    <div class="status concluido">Concluído</div>
+  </div>
+
+  <div class="card" data-status="andamento" data-categoria="Sugestão">
+    <div class="card-left">
+      <strong>Atualização do app mobile</strong>
+      <span>Categoria: Sugestão</span>
+      <span>Data: 11/09/2025</span>
+    </div>
+    <div class="status andamento">Em andamento</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// Setas dos selects
+document.querySelectorAll('.select-wrapper select').forEach(select => {
+  const wrapper = select.parentElement;
+  select.addEventListener('focus', () => wrapper.classList.add('aberto'));
+  select.addEventListener('blur', () => wrapper.classList.remove('aberto'));
+});
+
+// Filtros dinâmicos
+const statusFilter = document.getElementById('statusFilter');
+const categoriaFilter = document.getElementById('categoriaFilter');
+const cards = document.querySelectorAll('.cards-list .card');
+
+function filtrarCards() {
+  const statusVal = statusFilter.value;
+  const categoriaVal = categoriaFilter.value;
+
+  cards.forEach(card => {
+    const cardStatus = card.getAttribute('data-status');
+    const cardCategoria = card.getAttribute('data-categoria');
+
+    if ((statusVal === "" || cardStatus === statusVal) &&
+        (categoriaVal === "" || cardCategoria === categoriaVal)) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+
+statusFilter.addEventListener('change', filtrarCards);
+categoriaFilter.addEventListener('change', filtrarCards);
+
+// Botão Limpar Filtros
+const btnLimpar = document.getElementById('limparFiltros');
+btnLimpar.addEventListener('click', () => {
+  statusFilter.value = "";
+  categoriaFilter.value = "";
+  filtrarCards();
+});
+</script>
+
+</body>
+</html>
